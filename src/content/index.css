@@ -1,0 +1,24 @@
+/* src/content/index.css */
+
+/* 高亮单词的样式 */
+.deepread-highlight {
+    background-color: rgba(255, 235, 59, 0.6); /* 亮黄色背景 */
+    border-bottom: 2px solid #fbc02d;          /* 底部深色线条 */
+    color: inherit;                            /* 保持原有文字颜色 */
+    cursor: pointer;                           /* 鼠标放上去变小手 */
+    transition: all 0.2s ease;
+    border-radius: 2px;
+    padding: 0 2px;                            /* 左右加一点点间距 */
+  }
+  
+  /* 鼠标悬停时的效果 */
+  .deepread-highlight:hover {
+    background-color: rgba(255, 235, 59, 0.9);
+    transform: scale(1.05);                    /* 微微放大 */
+    display: inline-block;                     /* 让 transform 生效 */
+  }
+  
+  /* 这是一个占位符，防止页面抖动 */
+  #deepread-extension-root {
+    all: initial; /* 隔离样式，防止网页 CSS 污染插件弹窗 */
+  }

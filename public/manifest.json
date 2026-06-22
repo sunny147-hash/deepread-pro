@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "DeepRead Pro",
+  "version": "1.0.0",
+  "description": "AI English Reading Assistant",
+  "permissions": [
+    "sidePanel",
+    "contextMenus",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://ark.cn-beijing.volces.com/*"
+  ],
+  "action": {
+    "default_title": "DeepRead",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "src/background/index.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["loader.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*",
+        "dictionary.json",
+        "src/content/index.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
